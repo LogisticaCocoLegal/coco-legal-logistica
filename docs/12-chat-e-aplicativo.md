@@ -135,3 +135,124 @@ Campos:
 
 Botão:
 
+Iniciar Almoço
+
+Resultado:
+
+Registrar horário automaticamente.
+
+---
+
+Botão:
+
+Finalizar Almoço
+
+Resultado:
+
+Registrar horário automaticamente.
+
+---
+
+# Registro de Início de Rota
+
+Objetivo:
+
+Capturar o ponto real de partida.
+
+Registrar:
+
+- Data
+- Hora
+- Latitude
+- Longitude
+- Endereço
+
+Origem:
+
+Clique de abastecimento.
+
+---
+
+# Registro de Fim de Rota
+
+Objetivo:
+
+Registrar encerramento operacional.
+
+Registrar:
+
+- Data
+- Hora
+- Localização
+
+---
+
+# Minhas Informações
+
+O colaborador poderá visualizar:
+
+- Base Atual
+- Função Exercida
+- Rotas
+- Indicadores
+- Premiações
+
+---
+
+# Indicadores do Colaborador
+
+Exemplos:
+
+- Planejadas
+- Executadas
+- Canceladas
+- Recebidas
+- Transferidas
+- Litros
+- KM
+- Ocorrências
+
+---
+
+# Histórico de Premiação
+
+Visualizar:
+
+- Valor Diário
+- Valor Mensal
+- Histórico
+
+---
+
+# Notificações
+
+Permitir envio de:
+
+- Mudança de Base
+- Transferência de Rota
+- Avisos Operacionais
+- Ocorrências
+
+---
+
+# Armazenamento
+
+Utilizar Supabase Storage para:
+
+- Fotos
+- Arquivos
+- Comprovantes
+- Imagens de ocorrências
+
+---
+
+# Evolução Futura
+
+Preparar para:
+
+- APK Android
+- Áudios no Chat
+- Assinatura Digital
+- Rastreamento GPS
+- Notificações Push
+- Comprovante de Entrega

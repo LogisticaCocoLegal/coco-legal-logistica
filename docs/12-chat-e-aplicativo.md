@@ -2,9 +2,9 @@
 
 ## Objetivo
 
-Disponibilizar um aplicativo operacional para comunicação, registro de informações e acompanhamento da operação.
+Disponibilizar uma plataforma operacional para comunicação, registro de atividades e acompanhamento da operação logística.
 
-O aplicativo deverá funcionar inicialmente como PWA e futuramente gerar APK Android.
+A solução deverá funcionar inicialmente como PWA e futuramente como aplicativo Android (APK).
 
 ---
 
@@ -21,16 +21,17 @@ Autenticação:
 
 ---
 
-# Perfis
+# Perfis de Acesso
 
 ## CEO
 
 Permissões:
 
-- Visualizar todos os dashboards
+- Visualizar dashboards
 - Visualizar indicadores
 - Visualizar premiações
 - Visualizar ocorrências
+- Visualizar custos
 
 ---
 
@@ -38,10 +39,11 @@ Permissões:
 
 Permissões:
 
-- Visualizar toda a operação
+- Visualizar operação completa
 - Aprovar premiações
 - Tratar ocorrências
-- Registrar movimentações
+- Movimentar colaboradores
+- Gerenciar bases
 
 ---
 
@@ -51,8 +53,8 @@ Permissões:
 
 - Importar arquivos
 - Registrar ocorrências
-- Gerenciar bases
-- Acompanhar execução
+- Gerenciar dados operacionais
+- Acompanhar indicadores
 
 ---
 
@@ -61,7 +63,7 @@ Permissões:
 Permissões:
 
 - Visualizar informações próprias
-- Utilizar chat
+- Participar do chat
 - Registrar almoço
 - Registrar ocorrências
 - Visualizar indicadores pessoais
@@ -70,9 +72,9 @@ Permissões:
 
 # Chat por Base
 
-Cada base possuirá um canal próprio.
+Cada base possuirá seu próprio canal de comunicação.
 
-Exemplos:
+Bases iniciais:
 
 - Rio Comprido - CD
 - Barra da Tijuca
@@ -86,11 +88,11 @@ Exemplos:
 
 Permitir:
 
-- Mensagens
-- Fotos
-- Arquivos
-- Histórico
-- Pesquisa
+- Envio de mensagens
+- Envio de fotos
+- Envio de arquivos
+- Histórico de conversas
+- Pesquisa de mensagens
 
 ---
 
@@ -108,18 +110,19 @@ Problema mecânico.
 
 # Envio de Fotos
 
-Permitir envio de:
+Utilização para:
 
 - Problemas mecânicos
 - Comprovantes
 - Ocorrências operacionais
 - Evidências de atendimento
+- Registros de campo
 
 ---
 
 # Registro de Ocorrências
 
-Permitir criar ocorrências pelo aplicativo.
+Permitir criar ocorrências diretamente pelo aplicativo.
 
 Campos:
 
@@ -133,23 +136,29 @@ Campos:
 
 # Registro de Almoço
 
-Botão:
+## Iniciar Almoço
 
-Iniciar Almoço
+Registrar automaticamente:
 
-Resultado:
-
-Registrar horário automaticamente.
+- Data
+- Hora
 
 ---
 
-Botão:
+## Finalizar Almoço
 
-Finalizar Almoço
+Registrar automaticamente:
 
-Resultado:
+- Data
+- Hora
 
-Registrar horário automaticamente.
+---
+
+## Indicadores
+
+- Início do almoço
+- Fim do almoço
+- Tempo total de almoço
 
 ---
 
@@ -157,7 +166,7 @@ Registrar horário automaticamente.
 
 Objetivo:
 
-Capturar o ponto real de partida.
+Capturar o ponto real de partida da operação.
 
 Registrar:
 
@@ -169,7 +178,8 @@ Registrar:
 
 Origem:
 
-Clique de abastecimento.
+- Clique de abastecimento
+- Registro manual
 
 ---
 
@@ -177,13 +187,48 @@ Clique de abastecimento.
 
 Objetivo:
 
-Registrar encerramento operacional.
+Registrar o encerramento da operação.
 
 Registrar:
 
 - Data
 - Hora
+- Latitude
+- Longitude
+- Endereço
+
+---
+
+# Registro de Presença na Base
+
+## Cheguei na Base
+
+Registrar:
+
+- Base
+- Data
+- Hora
 - Localização
+
+---
+
+## Saí da Base
+
+Registrar:
+
+- Base
+- Data
+- Hora
+- Localização
+
+---
+
+## Indicadores
+
+- Horário de chegada
+- Horário de saída
+- Permanência na base
+- Histórico de registros
 
 ---
 
@@ -192,20 +237,21 @@ Registrar:
 O colaborador poderá visualizar:
 
 - Base Atual
+- Base Planejada
 - Função Exercida
-- Rotas
+- Rotas do Dia
 - Indicadores
+- Ocorrências
 - Premiações
 
 ---
 
 # Indicadores do Colaborador
 
-Exemplos:
-
 - Planejadas
 - Executadas
 - Canceladas
+- Encaixes
 - Recebidas
 - Transferidas
 - Litros
@@ -220,7 +266,7 @@ Visualizar:
 
 - Valor Diário
 - Valor Mensal
-- Histórico
+- Histórico de Premiações
 
 ---
 
@@ -232,6 +278,7 @@ Permitir envio de:
 - Transferência de Rota
 - Avisos Operacionais
 - Ocorrências
+- Mensagens da Supervisão
 
 ---
 
@@ -256,3 +303,4 @@ Preparar para:
 - Rastreamento GPS
 - Notificações Push
 - Comprovante de Entrega
+- Geolocalização em Tempo Real

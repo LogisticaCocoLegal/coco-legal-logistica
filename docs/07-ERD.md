@@ -26,62 +26,44 @@ FORN --> CUSTOS[tb_custos_terceiros]
 
 USER --> IMP[tb_importacoes]
 USER --> OBS[tb_observacoes]
-
+```
 
 # Relacionamentos Principais
 
 ## Planejado x Executado
 
-tb_cliente_planejados
+tb_clientes_planejados
+
 +
+
 tb_clientes_executados
 
-Chave de comparação:
+### Chave de comparação
 
-Data
-+
-Cliente
-+
-CEP
+- Data
+- Cliente
+- CEP
 
----
-
-## Identificação de Cancelados
+## Cancelados
 
 Planejado = Sim
+
 Executado = Não
 
----
-
-## Identificação de Encaixes
+## Encaixes
 
 Planejado = Não
+
 Executado = Sim
 
----
-
-## Identificação de Transferidos
+## Transferidos
 
 Cliente encontrado nos dois arquivos.
 
-Entregador Planejado
-≠
-Entregador Executado
+Entregador Planejado diferente do Entregador Executado.
 
-Resultado:
-
-Transferido para quem perdeu.
-
----
-
-## Identificação de Recebidos
+## Recebidos
 
 Cliente encontrado nos dois arquivos.
 
-Entregador Planejado
-≠
-Entregador Executado
-
-Resultado:
-
-Recebido para quem executou.
+Entregador Planejado diferente do Entregador Executado.

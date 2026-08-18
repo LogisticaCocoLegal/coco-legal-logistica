@@ -1,0 +1,188 @@
+/* =============================================================
+   PORTAL — Página inicial e cards de módulos
+   ============================================================= */
+
+.portal-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--clr-bg);
+}
+
+.portal-main {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+/* ── Hero ── */
+.portal-hero {
+  margin-bottom: 48px;
+}
+
+.portal-hero-greeting {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--clr-accent);
+  margin-bottom: 4px;
+}
+
+.portal-hero-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--clr-text-primary);
+  margin-bottom: 8px;
+  line-height: 1.1;
+}
+
+.portal-hero-sub {
+  font-size: 1rem;
+  color: var(--clr-text-secondary);
+}
+
+.portal-hero-perfil {
+  color: var(--clr-text-muted);
+  font-size: 0.875rem;
+}
+
+/* ── Grid de módulos ── */
+.portal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+/* ── Card base ── */
+a:has(.module-card) { display: block; text-decoration: none; }
+
+.module-card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px;
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition:
+    border-color var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+  overflow: hidden;
+  animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.module-card:not(.module-card--soon):hover {
+  border-color: var(--card-color, var(--clr-accent));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 0 1px var(--card-color, var(--clr-accent));
+}
+
+.module-card:not(.module-card--soon):hover .module-card-glow {
+  opacity: 1;
+}
+
+.module-card:not(.module-card--soon):hover .module-card-arrow {
+  color: var(--card-color, var(--clr-accent));
+  transform: translateX(4px);
+}
+
+/* ── Estado "Em breve" ── */
+.module-card--soon {
+  opacity: 0.55;
+  cursor: default;
+}
+
+/* ── Ícone ── */
+.module-card-icon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition);
+}
+
+.module-card:hover .module-card-icon {
+  transform: scale(1.05);
+}
+
+/* ── Corpo ── */
+.module-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.module-card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.module-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--clr-text-primary);
+  letter-spacing: -0.02em;
+}
+
+.module-card-badge {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 100px;
+  background: rgba(255,255,255,0.06);
+  color: var(--clr-text-muted);
+  border: 1px solid var(--clr-border);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.module-card-desc {
+  font-size: 0.8125rem;
+  color: var(--clr-text-secondary);
+  line-height: 1.5;
+}
+
+/* ── Seta ── */
+.module-card-arrow {
+  flex-shrink: 0;
+  color: var(--clr-text-muted);
+  transition: color var(--transition), transform var(--transition);
+  align-self: center;
+}
+
+/* ── Glow ── */
+.module-card-glow {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    var(--card-color-dim, rgba(34,197,94,0.06)),
+    transparent 40%
+  );
+  transition: opacity 0.3s;
+  border-radius: inherit;
+}
+
+/* ── Responsivo ── */
+@media (max-width: 640px) {
+  .portal-main { padding: 32px 16px 60px; }
+  .portal-grid { grid-template-columns: 1fr; }
+  .module-card-arrow { display: none; }
+}
